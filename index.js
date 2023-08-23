@@ -1,7 +1,11 @@
 const express = require("express");
+const cors = require("cors"); // Import the cors package
 const app = express();
 const PORT = process.env.PORT || 3000;
 const productsData = require("./data.json"); // Import your data.json
+
+// Use the cors middleware
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("JSON server running");
